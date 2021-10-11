@@ -2,6 +2,8 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router';
 import useAuth from '../../hooks/useAuth';
+import useCart from '../../hooks/useCart';
+import { clearTheCart } from '../../utilities/fakedb';
 import './Shipping.css';
 
 const Shipping = () => {
@@ -12,6 +14,7 @@ const Shipping = () => {
         console.log(data)
     };
     const handleOrderSubmit = () => {
+        clearTheCart();
         histoty.push('/placeorder')
     }
     return (
