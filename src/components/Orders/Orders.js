@@ -7,7 +7,7 @@ const Orders = () => {
   const { user } = useAuth();
   const history = useHistory()
   useEffect(() => {
-    fetch(`http://localhost:5000/orders?email=${user.email}`, {
+    fetch(`https://ema-john-simple-shop.herokuapp.com/orders?email=${user.email}`, {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('idToken')}`
       }
