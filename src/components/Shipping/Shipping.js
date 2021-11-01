@@ -13,7 +13,7 @@ const Shipping = () => {
         const savedCart = getStoredCart();
         data.order = savedCart;
 
-        fetch('https://ema-john-simple-shop.herokuapp.com/orders', {
+        fetch('http://localhost:5000/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -28,8 +28,10 @@ const Shipping = () => {
                     reset();
 
                 }
-            });
-        history.push('/placeorder')
+            })
+            .finally(() => {
+                history.push('/placeorder')
+            })
     };
     return (
         <div>
